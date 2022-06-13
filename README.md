@@ -52,7 +52,7 @@ Simply open **engine.sln** in the root directory and click **Run Without Debugge
 ![VIGILImage-8](https://user-images.githubusercontent.com/48212096/173429341-366d4ca0-af82-43b1-b574-39a2a62f13e6.png)
 ![VIGILImage-9](https://user-images.githubusercontent.com/48212096/173429348-5b0cc46c-f2e2-4cfb-9901-c03b068eda21.png)
 
-# Assets
+# Assets - Third Party
 ## Fonts
   -	**Main Menu Font:** https://fonts.google.com/specimen/IM+Fell+DW+Pica+SC?category=Serif&preview.text=Start%20Game&preview.text_type=custom
   -	**Generally used font:** https://fonts.google.com/specimen/Bebas+Neue?query=bebas
@@ -83,4 +83,7 @@ Simply open **engine.sln** in the root directory and click **Run Without Debugge
   -	**Indoor Footsteps:** https://freesound.org/people/dkiller2204/sounds/366111/
   -	**UI Click:** https://freesound.org/people/unfa/sounds/565132/
   -	**UI Reveal:** https://freesound.org/people/newlocknew/sounds/515834/
-  -	**UI Reveal 2:** https://freesound.org/people/steaq/sounds/577464/
+  -	**UI Reveal 2:** https://freesound.org/people/steaq/sounds/577464
+
+## Code
+  - **A-star Pathfinding:** https://www.youtube.com/watch?v=icZj67PTFhc, https://github.com/OneLoneCoder/videos/blob/master/OneLoneCoder_PathFinding_AStar.cpp 
