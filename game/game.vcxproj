@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F35977C-8B6C-980D-3459-7E10206F140F}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>game</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86_64\game\</OutDir>
+    <IntDir>..\inter\Debug-windows-x86_64\game\</IntDir>
+    <TargetName>game</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\game\</OutDir>
+    <IntDir>..\inter\Release-windows-x86_64\game\</IntDir>
+    <TargetName>game</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Dist-windows-x86_64\game\</OutDir>
+    <IntDir>..\inter\Dist-windows-x86_64\game\</IntDir>
+    <TargetName>game</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>ENGINE_PLATFORM_WIN;ENGINE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;..\engine\src;..\engine\external;..\engine\external\spdlog\include;..\engine\external\glm;..\engine\external\bullet;..\engine\external\freetype\include;..\engine\external\assimp\include;..\engine\external\assimp\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>ENGINE_PLATFORM_WIN;ENGINE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;..\engine\src;..\engine\external;..\engine\external\spdlog\include;..\engine\external\glm;..\engine\external\bullet;..\engine\external\freetype\include;..\engine\external\assimp\include;..\engine\external\assimp\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>ENGINE_PLATFORM_WIN;ENGINE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\engine\src;..\engine\external;..\engine\external\spdlog\include;..\engine\external\glm;..\engine\external\bullet;..\engine\external\freetype\include;..\engine\external\assimp\include;..\engine\external\assimp\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\game\Layers\Controls_Layer.h" />
+    <ClInclude Include="src\game\Layers\Death_Layer.h" />
+    <ClInclude Include="src\game\Layers\Inventory_Details_Layer.h" />
+    <ClInclude Include="src\game\Layers\Inventory_Examine_Layer.h" />
+    <ClInclude Include="src\game\Layers\Inventory_Layer.h" />
+    <ClInclude Include="src\game\Layers\Pickup_Layer.h" />
+    <ClInclude Include="src\game\Pickup\Ammo.h" />
+    <ClInclude Include="src\game\Pickup\FirstAidSpray.h" />
+    <ClInclude Include="src\game\Pickup\Pistol.h" />
+    <ClInclude Include="src\game\Player\AnimationController.h" />
+    <ClInclude Include="src\game\Pickup\BulletProjectile.h" />
+    <ClInclude Include="src\game\AI\Enemy.h" />
+    <ClInclude Include="src\game\Layers\example_layer.h" />
+    <ClInclude Include="src\game\Layers\Level1_Layer.h" />
+    <ClInclude Include="src\game\Layers\Level2_Layer.h" />
+    <ClInclude Include="src\game\Layers\MainMenu_Layer.h" />
+    <ClInclude Include="src\game\AI\Pathfinding.h" />
+    <ClInclude Include="src\game\Pickup\Pickup.h" />
+    <ClInclude Include="src\game\Player\Player.h" />
+    <ClInclude Include="src\game\Player\PlayerController.h" />
+    <ClInclude Include="src\game\UI\ButtonImage.h" />
+    <ClInclude Include="src\game\UI\ButtonText.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\game\Layers\Controls_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\Death_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\Inventory_Details_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\Inventory_Examine_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\Inventory_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\Pickup_Layer.cpp" />
+    <ClCompile Include="src\game\Pickup\Ammo.cpp" />
+    <ClCompile Include="src\game\Pickup\FirstAidSpray.cpp" />
+    <ClCompile Include="src\game\Pickup\Pistol.cpp" />
+    <ClCompile Include="src\game\Player\AnimationController.cpp" />
+    <ClCompile Include="src\game\Pickup\BulletProjectile.cpp" />
+    <ClCompile Include="src\game\AI\Enemy.cpp" />
+    <ClCompile Include="src\game\Layers\example_layer.cpp" />
+    <ClCompile Include="src\game\game.cpp" />
+    <ClCompile Include="src\game\Layers\Level1_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\Level2_Layer.cpp" />
+    <ClCompile Include="src\game\Layers\MainMenu_Layer.cpp" />
+    <ClCompile Include="src\game\AI\Pathfinding.cpp" />
+    <ClCompile Include="src\game\Player\Player.cpp" />
+    <ClCompile Include="src\game\Player\PlayerController.cpp" />
+    <ClCompile Include="src\game\UI\ButtonImage.cpp" />
+    <ClCompile Include="src\game\UI\ButtonText.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\engine\engine.vcxproj">
+      <Project>{FBDB78FB-E77D-A3D1-D038-B725BC792A22}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="assets\fixed_camera_angles_level1.txt" />
+    <Text Include="assets\fixed_camera_angles_level2.txt" />
+    <Text Include="assets\obstacles_level2 - Backup.txt" />
+    <Text Include="assets\obstacles_level2.txt" />
+    <Text Include="assets\sign_positions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="assets\audio\Door_Transition.wav" />
+    <Media Include="assets\audio\Gunshot.wav" />
+    <Media Include="assets\audio\Gunshot_Empty.wav" />
+    <Media Include="assets\audio\Level1_Ambient.wav" />
+    <Media Include="assets\audio\Level2_Ambient.wav" />
+    <Media Include="assets\audio\MainMenu_Ambient.wav" />
+    <Media Include="assets\audio\Player_Hit.wav" />
+    <Media Include="assets\audio\Snow_Footstep1.wav" />
+    <Media Include="assets\audio\Snow_Footstep2.wav" />
+    <Media Include="assets\audio\Snow_Footstep3.wav" />
+    <Media Include="assets\audio\Snow_Footstep4.wav" />
+    <Media Include="assets\audio\Snow_Footstep5.wav" />
+    <Media Include="assets\audio\UI_Click.wav" />
+    <Media Include="assets\audio\UI_Reveal1.wav" />
+    <Media Include="assets\audio\UI_Reveal2.wav" />
+    <Media Include="assets\audio\Wood_Footstep1.wav" />
+    <Media Include="assets\audio\Wood_Footstep2.wav" />
+    <Media Include="assets\audio\Wood_Footstep3.wav" />
+    <Media Include="assets\audio\Wood_Footstep4.wav" />
+    <Media Include="assets\audio\Zombie_Attack.wav" />
+    <Media Include="assets\audio\Zombie_Dying.wav" />
+    <Media Include="assets\audio\Zombie_Groan1.wav" />
+    <Media Include="assets\audio\Zombie_Groan2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\ArchivoNarrow-Bold.ttf" />
+    <Font Include="assets\fonts\ArchivoNarrow-Medium.ttf" />
+    <Font Include="assets\fonts\ArchivoNarrow-Regular.ttf" />
+    <Font Include="assets\fonts\arial.ttf" />
+    <Font Include="assets\fonts\BebasNeue-Bold.ttf" />
+    <Font Include="assets\fonts\BebasNeue-Regular.ttf" />
+    <Font Include="assets\fonts\IMFellDWPicaSC-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\models\animated\enemy\attack.fbx" />
+    <None Include="assets\models\animated\enemy\dead.fbx" />
+    <None Include="assets\models\animated\enemy\hit.fbx" />
+    <None Include="assets\models\animated\enemy\idle.fbx" />
+    <None Include="assets\models\animated\enemy\walk.fbx" />
+    <None Include="assets\models\animated\enemy\zombie.fbx" />
+    <None Include="assets\models\animated\player\aim.fbx" />
+    <None Include="assets\models\animated\player\aimDown.fbx" />
+    <None Include="assets\models\animated\player\aimHit.fbx" />
+    <None Include="assets\models\animated\player\hit.fbx" />
+    <None Include="assets\models\animated\player\idle.fbx" />
+    <None Include="assets\models\animated\player\model-gun.fbx" />
+    <None Include="assets\models\animated\player\model.fbx" />
+    <None Include="assets\models\animated\player\pickup.fbx" />
+    <None Include="assets\models\animated\player\pickup2.fbx" />
+    <None Include="assets\models\animated\player\shoot.fbx" />
+    <None Include="assets\models\animated\player\walking.fbx" />
+    <None Include="assets\models\animated\player\walkingEnd.fbx" />
+    <None Include="assets\models\animated\player\walkingStart.fbx" />
+    <None Include="assets\models\static\beretta\gun.fbx" />
+    <None Include="assets\models\static\bullet.fbx" />
+    <None Include="assets\models\static\cow4.3ds" />
+    <None Include="assets\models\static\elm.3ds" />
+    <None Include="assets\models\static\house_indoor\house_indoor.fbx" />
+    <None Include="assets\models\static\stop_sign\stop_sign.fbx" />
+    <None Include="assets\shaders\mesh.glsl" />
+    <None Include="assets\shaders\text_2D.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\models\animated\enemy\zombie.png" />
+    <Image Include="assets\models\animated\player\beretta_diffuse.png" />
+    <Image Include="assets\models\animated\player\man_t256.png" />
+    <Image Include="assets\models\static\beretta\M9_palette.png" />
+    <Image Include="assets\models\static\house_indoor\bed.png" />
+    <Image Include="assets\models\static\house_indoor\carpet.png" />
+    <Image Include="assets\models\static\house_indoor\cupboard.png" />
+    <Image Include="assets\models\static\house_indoor\decorations.png" />
+    <Image Include="assets\models\static\house_indoor\door.png" />
+    <Image Include="assets\models\static\house_indoor\floor.png" />
+    <Image Include="assets\models\static\house_indoor\keypad.png" />
+    <Image Include="assets\models\static\house_indoor\paintings.png" />
+    <Image Include="assets\models\static\house_indoor\table.png" />
+    <Image Include="assets\models\static\house_indoor\tiles.png" />
+    <Image Include="assets\models\static\house_indoor\toilet.png" />
+    <Image Include="assets\models\static\house_indoor\wall.png" />
+    <Image Include="assets\models\static\house_indoor\wood.png" />
+    <Image Include="assets\models\static\stop_sign\stop_sign_1.png" />
+    <Image Include="assets\models\static\stop_sign\stop_sign_2.png" />
+    <Image Include="assets\models\static\stop_sign\stop_sign_3.png" />
+    <Image Include="assets\textures\AmmoBox.png" />
+    <Image Include="assets\textures\car.png" />
+    <Image Include="assets\textures\debug\NotVisitedCell.png" />
+    <Image Include="assets\textures\debug\ObstacleCell.png" />
+    <Image Include="assets\textures\debug\PathCell.png" />
+    <Image Include="assets\textures\debug\VisitedCell.png" />
+    <Image Include="assets\textures\DirtyIce-HeightMap.bmp" />
+    <Image Include="assets\textures\DirtyIce.bmp" />
+    <Image Include="assets\textures\FirstAidSpray.png" />
+    <Image Include="assets\textures\mansionOutdoor.png" />
+    <Image Include="assets\textures\skybox\xneg-Gray.png" />
+    <Image Include="assets\textures\skybox\xpos-Gray.png" />
+    <Image Include="assets\textures\skybox\yneg-Gray.png" />
+    <Image Include="assets\textures\skybox\ypos-Gray.png" />
+    <Image Include="assets\textures\skybox\zneg-Gray.png" />
+    <Image Include="assets\textures\skybox\zpos-Gray.png" />
+    <Image Include="assets\textures\transition_image.png" />
+    <Image Include="assets\textures\Tree1.png" />
+    <Image Include="assets\textures\Tree2.png" />
+    <Image Include="assets\textures\Tree3.png" />
+    <Image Include="assets\textures\UI\Background.png" />
+    <Image Include="assets\textures\UI\Controls.png" />
+    <Image Include="assets\textures\UI\Death-Screen-Text.png" />
+    <Image Include="assets\textures\UI\Health-Caution.png" />
+    <Image Include="assets\textures\UI\Health-Danger.png" />
+    <Image Include="assets\textures\UI\Health-Fine.png" />
+    <Image Include="assets\textures\UI\Inventory-Options-Selected.png" />
+    <Image Include="assets\textures\UI\Inventory-Options.png" />
+    <Image Include="assets\textures\UI\InventorySlot-CombineGreen.png" />
+    <Image Include="assets\textures\UI\InventorySlot-CombineRed.png" />
+    <Image Include="assets\textures\UI\InventorySlot-Selected.png" />
+    <Image Include="assets\textures\UI\InventorySlot.png" />
+    <Image Include="assets\textures\UI\main_menu.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
