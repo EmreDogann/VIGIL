@@ -6,6 +6,8 @@ VIGIL is a very short survival horror game with fixed camera angles drawing heav
 The premise is simple, you have just survived a car crash and have injured your leg. Your car is going nowhere and so you need to find help as quickly as possible as it’s starting to get dark out. After some walking, you notice other cars in similar disarray to yours which does not bode well for your current predicament. Eventually, you come across a mansion and make your way inside for sanctuary. Little did you know the horrors that awaited you inside…
 The objective is simple: survive.
 
+The game doesn't actually have an end/win state so you walk around until you die or kill all enemies. My wish to remake this game in a more matrure engine such as Unity, Godot, or Unreal Engine and take it further and expand the scope of the game.
+
 # Mechanics
 The player movement uses a tank controls system where you cannot turn while walking forward. You also cannot move backwards. These clunky controls can be a hindrance in some genres but in survival horror, if implemented effectively, can add to the tension in the game.
 
