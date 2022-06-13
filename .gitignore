@@ -1,5 +1,5 @@
 # Exclude engine/external libary folders from gitignore checks
-!engine/external
+!engine/external*
 
 # User-specific files
 *.rsuser
